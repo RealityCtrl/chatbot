@@ -1,0 +1,150 @@
+{
+    "metadata": {
+        "importFormat": "JSON",
+        "importType": "LEX",
+        "schemaVersion": "1.0"
+    },
+    "resource": {
+        "description": "Available car manufacturers that can be insured",
+        "enumerationValues": [
+            {
+                "value": "Alfa Romeo"
+            },
+            {
+                "value": "Alpina"
+            },
+            {
+                "value": "Aston Martin"
+            },
+            {
+                "value": "Audi"
+            },
+            {
+                "value": "Bentley"
+            },
+            {
+                "value": "BMW"
+            },
+            {
+                "value": "Citroen"
+            },
+            {
+                "value": "Dacia"
+            },
+            {
+                "value": "DS"
+            },
+            {
+                "value": "Ferrari"
+            },
+            {
+                "value": "Fiat"
+            },
+            {
+                "value": "Ford"
+            },
+            {
+                "value": "Honda"
+            },
+            {
+                "value": "Hyundai"
+            },
+            {
+                "value": "Infiniti"
+            },
+            {
+                "value": "Jaguar"
+            },
+            {
+                "value": "Jeep"
+            },
+            {
+                "value": "Kia"
+            },
+            {
+                "value": "Lamborghini"
+            },
+            {
+                "value": "Land Rover"
+            },
+            {
+                "value": "Lexus"
+            },
+            {
+                "value": "Lotus"
+            },
+            {
+                "value": "Maserati"
+            },
+            {
+                "value": "Mazda"
+            },
+            {
+                "value": "McLaren"
+            },
+            {
+                "value": "Mercedes"
+            },
+            {
+                "value": "MG"
+            },
+            {
+                "value": "Mini"
+            },
+            {
+                "value": "Mitsubishi"
+            },
+            {
+                "value": "Nissan"
+            },
+            {
+                "value": "Peugeot"
+            },
+            {
+                "value": "Porsche"
+            },
+            {
+                "value": "Renault"
+            },
+            {
+                "value": "Rolls-Royce"
+            },
+            {
+                "value": "Seat"
+            },
+            {
+                "value": "Skoda"
+            },
+            {
+                "value": "Smart"
+            },
+            {
+                "value": "SsangYong"
+            },
+            {
+                "value": "Subaru"
+            },
+            {
+                "value": "Suzuki"
+            },
+            {
+                "value": "Tesla"
+            },
+            {
+                "value": "Toyota"
+            },
+            {
+                "value": "Vauxhall"
+            },
+            {
+                "value": "Volkswagen"
+            },
+            {
+                "value": "Volvo"
+            }
+        ],
+        "name": "CarMakes",
+        "valueSelectionStrategy": "ORIGINAL_VALUE",
+        "version": "version number"
+    }
+}
