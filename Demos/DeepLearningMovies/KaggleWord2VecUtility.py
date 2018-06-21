@@ -8,10 +8,9 @@ import numpy as np
 
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
-from KaggleWord2VecUtility import KaggleWord2VecUtility
 
 
-class Word2VecUtility(object):
+class KaggleWord2VecUtility(object):
     """KaggleWord2VecUtility is a utility class for processing raw HTML text into segments for further learning"""
 
     @staticmethod
@@ -20,7 +19,7 @@ class Word2VecUtility(object):
         # optionally removing stop words.  Returns a list of words.
         #
         # 1. Remove HTML
-        review_text = BeautifulSoup(review, "html.parser").get_text()
+        review_text = BeautifulSoup(review).get_text()
         #
         # 2. Remove non-letters
         review_text = re.sub("[^a-zA-Z]"," ", review_text)

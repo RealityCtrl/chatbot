@@ -46,7 +46,7 @@ class NumeralConverter:
 
     def convert(self, number):
 
-        if isinstance(number, str) or number <=0:
+        if isinstance(number, str) or isinstance(number, float) or number <=0:
             return "Invalid number for conversion"
         numeral_string = ""
         if number >= 1000:

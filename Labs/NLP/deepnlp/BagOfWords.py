@@ -18,10 +18,8 @@ import pandas as pd
 import numpy as np
 
 if __name__ == '__main__':
-    train = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'labeledTrainData.tsv'), header=0, \
-                    delimiter="\t", quoting=3)
-    test = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'testData.tsv'), header=0, delimiter="\t", \
-                   quoting=3 )
+    train = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'Sheet_2_train.csv'), header=0, quoting=3, usecols=['response_id','class','response_text'])
+    test = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'Sheet_1.csv'), header=0, quoting=3, usecols=['response_id','response_text'], skiprows=range(2, 42), skipfooter=12 )
 
     #print ('The first review is:')
     #print (train["review"][0])
@@ -39,8 +37,8 @@ if __name__ == '__main__':
     # of the movie review list
 
     print ("Cleaning and parsing the training set movie reviews...\n")
-    for i in range( 0, len(train["review"])):
-        clean_train_reviews.append(" ".join(Word2VecUtility.review_to_wordlist(train["review"][i], True)))
+    for i in range( 0, len(train["response_text"])):
+        clean_train_reviews.append(" ".join(Word2VecUtility.review_to_wordlist(train["response_text"][i], True)))
 
 
     # ****** Create a bag of words from the training set
@@ -86,7 +84,7 @@ if __name__ == '__main__':
     # features and the sentiment labels as the response variable
     #
     # This may take a few minutes to run
-    forest = forest.fit( train_data_features, train["sentiment"] )
+    forest = forest.fit( train_data_features, train["class"] )
 
 
 
@@ -94,8 +92,8 @@ if __name__ == '__main__':
     clean_test_reviews = []
 
     print ("Cleaning and parsing the test set movie reviews...\n")
-    for i in range(0,len(test["review"])):
-        clean_test_reviews.append(" ".join(Word2VecUtility.review_to_wordlist(test["review"][i], True)))
+    for i in range(0,len(test["response_text"])):
+        clean_test_reviews.append(" ".join(Word2VecUtility.review_to_wordlist(test["response_text"][i], True)))
 
     # Get a bag of words for the test set, and convert to a numpy array
     test_data_features = vectorizer.transform(clean_test_reviews)
@@ -107,10 +105,10 @@ if __name__ == '__main__':
 
     # Copy the results to a pandas dataframe with an "id" column and
     # a "sentiment" column
-    output = pd.DataFrame( data={"id":test["id"], "sentiment":result} )
+    output = pd.DataFrame( data={"response_id":test["response_id"], "class":result} )
 
     # Use pandas to write the comma-separated output file
-    output.to_csv(os.path.join(os.path.dirname(__file__), 'data', 'Bag_of_Words_model.csv'), index=False, quoting=3)
+    output.to_csv(os.path.join(os.path.dirname(__file__), 'data', 'Bag_of_Words_model_2.csv'), index=False, quoting=3)
     print ("Wrote results to Bag_of_Words_model.csv")
 
 

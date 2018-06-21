@@ -2,6 +2,7 @@
 
 import re
 import nltk
+import quopri
 
 import pandas as pd
 import numpy as np
@@ -21,6 +22,7 @@ class Word2VecUtility(object):
         #
         # 1. Remove HTML
         review_text = BeautifulSoup(review, "html.parser").get_text()
+        #review_text = BeautifulSoup(quopri.decodestring(review), "lxml").get_text()
         #
         # 2. Remove non-letters
         review_text = re.sub("[^a-zA-Z]"," ", review_text)
